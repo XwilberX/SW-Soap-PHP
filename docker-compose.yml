@@ -1,0 +1,18 @@
+version: '3'
+
+# Services
+services:
+
+  # Lemp Service
+  Lemp:
+    image: naveed125/nginx-php-fpm:latest
+    container_name: LEMP_nginx
+    restart: unless-stopped
+    ports:
+    - "80:80"
+    volumes:
+    - ./src:/var/www/html
+    links:
+    - db
+    environment:
+    - DEPLOYMENT=development
