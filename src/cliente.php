@@ -34,7 +34,6 @@ $client = new nusoap_client("http://localhost/server.php"); // Create a instance
         <br>
         <h5>Escribe algunos de estos servicios, escribelo como se muestra:</h5>
         <p>paises, frutas, marcas</p>
-        <p>&nbsp;</p>
         <ul class="list-group">
             <ul class="list-group">
             <?php
@@ -48,8 +47,8 @@ $client = new nusoap_client("http://localhost/server.php"); // Create a instance
                         $response = $client->call('frutas',array("name"=>$name));
                     if($name == 'marcas')
                         $response = $client->call('marcas',array("name"=>$name));
-                    else
-                        echo "El servicio no esta disponible";
+                    // else
+                    //     echo "El servicio no esta disponible";
 
                     if(empty($response))
                         echo $response;
